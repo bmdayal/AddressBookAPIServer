@@ -3,6 +3,14 @@ var mongojs = require('mongojs');
 var collections = ['Persons']
 
 var app = express();
+
+//help: http://jonathanmh.com/how-to-enable-cors-in-express-js-node-js/
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 //app.use(express.logger());
 //app.use(app.router);
 //app.set('views', __dirname + '/app');
@@ -25,8 +33,10 @@ app.get('/', function(request, response) {
   response.render('index.html')
 });
 
+
 app.get('/persons', function(req, res){
 	console.log('Received find all persons request');
+	
 	db.Persons.find(function(err, docs){
 		if(err){
 			console.log(err); throw err;
