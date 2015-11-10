@@ -4,21 +4,6 @@ var collections = ['Persons']
 
 var app = express();
 
-//help: http://jonathanmh.com/how-to-enable-cors-in-express-js-node-js/
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
-//app.use(express.logger());
-//app.use(app.router);
-//app.set('views', __dirname + '/app');
-
-//app.use(express.bodyParser());
-//app.use(express.methodOverride());
-//app.use(express.static(__dirname + '/app'));
-
 //DB Configuration
 localDatabaseURI = "mongodb://MongoLab-3:ojLtYaTSeM.6Ywk2BDxCO8.qq1KpeyMMLklH4_mVg2s-@ds048368.mongolab.com:48368/MongoLab-3";
 localDBUri = "mongodb://localhost:27017/AddressBook";
