@@ -1,23 +1,9 @@
-//mongodb commands: http://howtonode.org/node-js-and-mongodb-getting-started-with-mongojs
-//http://docs.mongodb.org/manual/reference/mongo-shell/
-
-//Configure routing, and break this app.js in different node routes
-//http://expressjs.com/guide/routing.html
-
-//Routing help: https://codeforgeek.com/2015/05/expressjs-router-tutorial/
-//See at the bottom
-
-//References: https://github.com/mafintosh/mongojs
-//Node.js and MongoLab on Windows Azure: http://blog.mongolab.com/2013/02/node-js-and-mongolab-on-windows-azure/
-
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
 var collections = ['Persons']
 
 databaseURI = process.env.PERSON_MONGOLAB_CONNECTION;
-//localDatabaseURI = "mongodb://MongoLab-3:ojLtYaTSeM.6Ywk2BDxCO8.qq1KpeyMMLklH4_mVg2s-@ds048368.mongolab.com:48368/MongoLab-3";
-//localDatabaseURI = "localhost:27017/AddressBook";
 
 var databaseURI = process.env.PERSON_MONGOLAB_CONNECTION || localDatabaseURI;
 console.log("DB URI Set as : " + databaseURI);
@@ -118,5 +104,3 @@ app.listen(port, function() {
   console.log("Listening on " + port);
 });
 
-//app.listen(3000);
-//console.log("server running on port 3000");
