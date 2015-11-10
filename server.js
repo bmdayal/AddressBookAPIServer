@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 
 //CORS on ExpressJS: http://enable-cors.org/server_expressjs.html
 // Add headers
-/*app.use(function (req, res, next) {
+app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', 'http://addressbookclient.azurewebsites.net');
@@ -49,7 +49,7 @@ app.use(bodyParser.json());
     // Pass to next layer of middleware
     next();
 });
-*/
+
 app.get('/persons', function(req, res){
 	console.log('Received find all persons request');
 	db.Persons.find(function(err, docs){
